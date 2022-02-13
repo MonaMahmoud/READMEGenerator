@@ -16,11 +16,7 @@ return inquirer.prompt([
     name: 'description',
     message: 'What is your project description?',
     },
-    {
-    type: 'input',
-    name: 'description',
-    message: 'What is your project description?',
-    },
+    
     {
     type: 'input',
     name: 'install',

@@ -21,7 +21,26 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+  let link;
+  switch(license) {
+    case "MIT":
+      link="https://opensource.org/licenses/MIT";
+      break;
+    case "Apache":
+      link = "https://opensource.org/licenses/Apache-2.0";
+      break;
+      case "GPL":
+      link = "https://www.gnu.org/licenses/gpl-3.0";
+      break;
+    default:
+      link = "";
+  }
+  return link;
+
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -30,6 +49,7 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const badge = renderLicenseBadge(data.license);
+  const link = renderLicenseLink(data.license);
   return `# ${data.title}
 
 
@@ -60,7 +80,7 @@ ${data.credits}
 
 
 ## License
-${data.license}
+This application is covered with licence type: ${data.license}. More info can be found here: [${data.license}](${link})
 
 
 ## Testing
